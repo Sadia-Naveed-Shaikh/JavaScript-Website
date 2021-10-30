@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+    <script>
+        const data
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://dummy.restapiexample.com/api/v1/employee/1", true);
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+            data= xhr.responseText;
+        };
+        xhr.send();
+
+         var table = document.getElementById('tableContents');
+            var tableContents = '<tr><td>' + data[0] + '</td><td>' + data[0] + '</td></tr>';
+            table.innerHTML = tableContents;
+    </script>
+
+    <h1>
+        Listing
+
+        <div class="container-fluid">
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id='tableContents'>
+                </tbody>
+            </table>
+        </div>
+    </h1>
+</body>
+
+
+</html>

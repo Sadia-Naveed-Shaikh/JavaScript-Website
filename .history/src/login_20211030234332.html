@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="/assets/lib/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/assets/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/signin.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <link href="/assets/lib/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css">
+    <script src="/assets/lib/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/js/all.js"></script>
+
+    <!-- <script type="text/javascript" src="/assets/script/signin.js"></script> -->
+
+    <script>
+        // Below function Executes on click of login button.
+        function validate() {
+
+             var x = document.getElementById("errorDiv");
+             var y = document.getElementById("successDiv");
+             var z= document.getElementById("existDiv");
+
+           
+          
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            console.log(email);
+            console.log(password);
+            var user = JSON.parse(localStorage.getItem("users"));
+            // console.log(user.password);
+            for (var i = 0; i < user.length; i++) {
+                if (user[i].password == password && user[i].email == email) {
+
+                    sessionStorage.setItem("username", user[i].name);
+                    sessionStorage.setItem("email", user[i].email);
+                    sessionStorage.setItem("password", user[i].password);
+                    sessionStorage.setItem("id", user[i].id);
+
+
+                    alert("Login Successful");
+
+                    var uid = user[i].id;
+                    var obj = {
+                        "userid": uid,
+                        "Date": Date(),
+                        "browserVersion": navigator.appVersion,
+                        "browserAgent": navigator.userAgent,
+                        "browserName": navigator.appName,
+                        "fullVersion": '' + parseFloat(navigator.appVersion),
+                        "majorVersion": parseInt(navigator.appVersion, 10),
+                        "browserPlatform": navigator.platform,
+                        "browserEngine": navigator.product,
+                        "locationHostname": window.location.hostname,
+                        "locationProtocol": window.location.protocol
+                    };
+
+
+            //         const myJSON = JSON.stringify(obj);
+            //         console.log(myJSON);
+            //         alert(myJSON);
+
+                    // localStorage.setItem('myJavaScriptObject', myJSON);
+
+
+                    // var data = { name: 'yogesh', salary: 35000, email: 'yogesh@makitweb.com' };
+                    // console.log(data);
+                    // var toString = JSON.stringify(data);
+
+                    // var xhttp = new XMLHttpRequest();
+
+                    // xhttp.open("POST", "logs.json", true);
+
+                    // xhttp.setRequestHeader("Content-Type", "application/json");
+                    // xhttp.send(toString);
+
+
+                    // xhttp.onreadystatechange = function () {
+                    //     if (this.readyState == 4 && this.status == 200) {
+                    //         // Response
+                    //         var response = this.responseText;
+                    //         if (response == 1)
+                    //             alert(response);
+                    //     }
+                    // };
+                    // localStorage.setItem('User', JSON.stringify(obj));
+                    // localStorage.setItem("name", username);
+                    // localStorage.setItem("LoginTime", Date());
+                    // document.getElementById("demo").innerHTML = localStorage.getItem("name") + localStorage.getItem("LoginTime");
+                    //  window.location.href = "Listing.html";
+
+            //     }
+
+            // }
+        //                 alert("User does not exist");
+
+             
+        // }
+
+
+                // id = user.id;
+                // if (password == user.password && email == user.email) {
+                    // alert("Login successfully");
+                    // const obj = {
+                    //     "userdata": [
+                    //         "id:user.id",
+                    //         "browserVersion : navigator.appVersion",
+                    //         "browserAgent : navigator.userAgent",
+                    //         "browserName : navigator.appName",
+                    //         "fullVersion : '' + parseFloat(navigator.appVersion)",
+                    //         "majorVersion : parseInt(navigator.appVersion, 10)",
+                    //         "browserPlatform : navigator.platform",
+                    //         "browserEngine: navigator.product",
+                    //         "locationHostname : window.location.hostname",
+                    //         "locationProtocol : window.location.protocol"
+                    //     ],
+                    // };
+                    // const myJSON = JSON.stringify(obj);
+                    // console.log(myJSON);
+                    // alert(myJSON);
+
+                    // localStorage.setItem('User', JSON.stringify(obj));
+                    // localStorage.setItem("name", username);
+                    // localStorage.setItem("LoginTime", Date());
+                    // document.getElementById("demo").innerHTML = localStorage.getItem("name") + localStorage.getItem("LoginTime");
+                    // window.location = "success.html"; // Redirecting to other page.
+                    // return false;
+                // }
+                // else {
+                //     alert("error")
+                // }
+            //}
+           function hide(){
+               var x = document.getElementById("myDIV");
+               x.style.display = "none";
+            }
+    </script>
+</head>
+
+<body style="background-color: #070336;">
+
+        <div id="existDiv">
+            <i class="fa fa-times-circle" onclick=hide()></i>
+            User Does not Exist 
+        </div>
+
+        <div id="errorDiv">
+            <i class="fa fa-times-circle" onclick=hide()></i>
+           Email or Password is not correct
+        </div>
+        <div id="errorDiv">
+            <i class="fa fa-times-circle" onclick=hide()></i>
+            successfully Logged In
+        </div>
+    <div class="container" style="background-color: #070336;">
+        <div class="row main">
+            <div class="col-sm-6" style="align-items: center; justify-content: center;">
+                <img src="/assets/images/Logo.PNG" style="width: 100%; height: 100%;">
+            </div>
+            <div class="col-sm-6">
+               
+                <div class="container" style="align-items: center; justify-content: center;">
+<div class="row loginrow"></div>
+                    <div class="row">
+                        <h2 style="padding:10px; color: dodgerblue;">Login</h2>
+                    </div>
+                    <form name="myForm"  onsubmit="return validate()" method="post">
+
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                        </div>
+                        <!-- <label for="psw"><b>Password</b></label> -->
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+                        </div>
+                        <button type="submit" value="Submit">Sign in</button>
+                        <label>
+                            <a href="SignUp.html">Sign up here</a>
+
+                        </label>
+
+                        <label>
+                            <a href="forgetPassword.html">Forget Password?</a>
+
+                        </label>
+                </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script>
+    function myFunction() {
+      
+    }
+</script>
+<!-- <script>
+    var sign = new signin();
+    email=document.getElementById("email").value;
+    alert(email);
+    password= document.getElementById("password").value;
+    // sign.validate(email,password)
+    document.getElementById("signin").addEventListener("click", sign.validate(email,password) );
+</script> -->
+
+</html>

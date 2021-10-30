@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+</head>
+
+<body>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://dummy.restapiexample.com/api/v1/employee/1", true);
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+        };
+        xhr.send();
+    </script>
+</body>
+
+
+</html>

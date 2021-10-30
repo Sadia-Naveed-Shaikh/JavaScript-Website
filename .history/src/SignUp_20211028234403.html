@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+ 
+    <script src="https://kit.fontawesome.com/2246d8fd03.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/signup.css">
+    <!-- <script src="/assets/script/signup.js"></script> -->
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+      <div class="row">
+            <div class="col-sm-6" style="align-items: center; justify-content: center;">
+                <img src="/assets/images/signup.jpg" style="width: 100%; height: auto;">
+            </div>
+            <div class="col-sm-6">
+                <form>
+                    <div class="container">
+                        <h2 style="padding:10px; color: dodgerblue;">Get Started</h2>
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input type="text" placeholder="Enter Email " name="email" id="email" required>
+
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-user icon"></i>
+                            <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+
+                        </div>
+
+                        <button type="submit" onclick="validate()">Create Account</button>
+                        <label>
+                            Already have an account? <a href="login.html">Sign in here</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function validate() {
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var user = [];
+       
+        var user = JSON.parse(localStorage.getItem("users"));
+
+        if (localStorage.length == 0) {
+              const obj = [
+                {
+                    "id": 1,
+                    "name": username,
+                    "email": email,
+                    "password": password
+
+                }
+            ]
+            const myJSON = JSON.stringify(obj);
+            localStorage.setItem("users", myJSON);
+        }
+
+        else if (username == "" || password == "" || email=="") {
+             alert("Enter Fields");
+        }
+
+        else {
+
+            for (var i = 0; i < user.length; i++){
+                if(user[i].email==email){
+                    alert("User Already Exist");
+                }
+              
+            }
+             return;
+            var a = [];
+            a = JSON.parse(localStorage.getItem('users')) || [];
+            a.push(obj);
+            localStorage.setItem('users', JSON.stringify(a));
+            alert("User Registered");
+        }
+
+    }
+
+</script>
+
+</html>

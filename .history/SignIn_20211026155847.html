@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+    // Below function Executes on click of login button.
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            console.log(username);
+            console.log(password);
+            if (username == "Formget" && password == "formget#123") {
+                alert("Login successfully");
+                // window.location = "success.html"; // Redirecting to other page.
+                return false;
+            }
+            else{
+                alert("error")
+            }
+        }
+</script>
+</head>
+
+<body>
+<div class="container">
+    <div class="main">
+        <h2>Javascript Login Form Validation</h2>
+        <form id="form_id" method="post" name="myform">
+            <label>User Name :</label>
+            <input type="text" name="username" id="username" required />
+            <label>Password :</label>
+            <input type="password" name="password" id="password" />
+            <input type="button" value="Login" id="submit" onclick="validate()" />
+        </form>
+    </div>
+</div>
+
+
+</body>
+
+</html>

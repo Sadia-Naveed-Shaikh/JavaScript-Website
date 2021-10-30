@@ -1,0 +1,53 @@
+
+
+        .input-container {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 30px;
+        }
+
+        input:focus {
+            outline: none !important;
+        }
+
+        input {
+            border: none;
+            width: 80%;
+            background-color: transparent;
+        }
+
+        button {
+            background-image: linear-gradient(dodgerblue, black);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        .icon {
+            color: dodgerblue;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .main {
+            margin-top: 100px;
+            height:500px;
+        }
+        .loginrow{
+            height:100px;
+        }
+@media screen and (max-width: 480px) {
+  .loginrow {
+    height:0px;
+  }
+}

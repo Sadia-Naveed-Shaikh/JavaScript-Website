@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2246d8fd03.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/signup.css">
+    <!-- <script src="/assets/script/signup.js"></script> -->
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- <div class="row">
+            logo
+        </div> -->
+
+        <div class="row">
+            <div class="col-sm">
+                <form>
+                    <div class="container">
+                        <h2 style="padding:10px; color: dodgerblue;">Get Started</h2>
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input type="text" placeholder="Enter Email " name="email" id="email" required>
+
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-user icon"></i>
+                            <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+
+                        </div>
+                        <!-- <label for="psw"><b>Password</b></label> -->
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+
+                        </div>
+
+                        <button type="submit" onclick="validate()">Create Account</button>
+                        <label>
+                            Already have an account? <a href="login.html">Sign in here</a>
+
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function validate() {
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        alert(email);
+        var user = [];
+        localStorage.setItem("names", JSON.stringify(user));
+
+        const obj = [
+            {
+                "id": 1,
+                "name": username,
+                "email": email,
+                "password": password
+
+            }
+        ]
+        const myJSON = JSON.stringify(obj);
+        console.log(myJSON);
+        alert(myJSON);
+
+        // if (username == "Formget" && password == "formget#123") {
+        //     alert("Login successfully");
+        //     // localStorage.setItem("name", username);
+        //     // localStorage.setItem("LoginTime", Date());
+        //     // document.getElementById("demo").innerHTML = localStorage.getItem("name") + localStorage.getItem("LoginTime");
+        //     // window.location = "success.html"; // Redirecting to other page.
+        //     // return false;
+        // }
+        // else {
+        var user = JSON.parse(localStorage.getItem("users"));
+        console.log(user);
+        if (user.length == 0) {
+            localStorage.setItem("users", myJSON);
+        }
+        else {
+
+            for (var i = 0; i < localStorage.length; i++){
+                if(localStorage.key(i).email==email){
+                    alert("Already Exist")
+                }
+            }
+             
+            var a = [];
+            // Parse the serialized data back into an aray of objects
+            a = JSON.parse(localStorage.getItem('users')) || [];
+            // Push the new data (whether it be an object or anything else) onto the array
+            a.push(obj);
+            // Alert the array value
+            alert(a);  // Should be something like [Object array]
+            // Re-serialize the array back into a string and store it in localStorage
+            localStorage.setItem('users', JSON.stringify(a));
+
+        }
+
+    }
+
+</script>
+
+</html>

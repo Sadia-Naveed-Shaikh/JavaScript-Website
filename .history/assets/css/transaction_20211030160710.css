@@ -1,0 +1,106 @@
+body {
+  font-size: small;
+}
+
+th {
+  font-size: 20px;
+}
+
+thead {
+  background-color: dodgerblue;
+}
+
+tr,
+td {
+  font-size: 18px;
+}
+
+.modal-body {
+  font-size: 18px;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 400px;
+  overflow:auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.delete {
+  /* background-color: #f44336; */
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.view{
+     /* background-color: green; */
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.details {
+  background-color: lightcoral;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover,
+a:active {
+  background-color: red;
+}
+
+#myInput {
+  background-image: url("/assets/images/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myInput1 {
+  background-image: url("/assets/images/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myInput2 {
+  background-image: url("/assets/images/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myInput3 {
+  background-image: url("/assets/images/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
