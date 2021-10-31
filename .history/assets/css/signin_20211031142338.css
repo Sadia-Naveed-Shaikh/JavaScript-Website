@@ -63,9 +63,14 @@
 
 
 #successDiv {
- 
+  width: 30%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: greenyellow;
   display: none;
-
+  position: fixed;
+ margin-right: 0px;
+ margin-left: 940px;
 }
 
 #hide{

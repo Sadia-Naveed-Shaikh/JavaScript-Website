@@ -62,7 +62,35 @@
     <div style="margin-top: 50px;">
         <h1 style="color: orangered; ">
             Logs
-                     
+                      <div class="container">
+                <div class="row">
+                    <div class="col-3">
+
+                        <input type="text" id="myInput" onkeyup="findId()" placeholder="Search by id.."
+                            title="Type in a name">
+                    </div>
+
+                    <div class="col-3">
+
+                        <input type="text" id="myInput1" onkeyup="findDate()" placeholder="Search by date.."
+                            title="Type in a name">
+                    </div>
+                    <div class="col-3">
+
+                        <input type="text" id="myInput2" onkeyup="findemail()" placeholder="Search by email.."
+                            title="Type in a name">
+                    </div>
+                    <div class="col-3">
+
+                        <input type="text" id="myInput3" onkeyup="findamount()" placeholder="Search by amount.."
+                            title="Type in a name">
+                    </div>
+                </div>
+
+
+            </div>
+            <p id="demo"></p>
+
             <div class="container  table-dark table-wrapper-scroll-y my-custom-scrollbar"
                 style="background-color: #070336;">
                 <table class="table table-dark table-bordered table-striped" id="table">

@@ -35,7 +35,6 @@
                     sessionStorage.setItem("email", user[i].email);
                     sessionStorage.setItem("password", user[i].password);
                     sessionStorage.setItem("id", user[i].id);
-console.log(sessionStorage);
 
 
                     var uid = user[i].id;
@@ -52,16 +51,11 @@ console.log(sessionStorage);
                         "locationHostname": window.location.hostname,
                         "locationProtocol": window.location.protocol
                     };
-                    localStorage.setItem("log", JSON.stringify(obj));
-
-                    if (y.style.display === "none") {
-                        y.style.display = "block";
-                    } else {
-                        y.style.display = "none";
-                    }
-                    if(sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")==true){
-                        window.location.href="profile.html";
-                    }
+                    // if (y.style.display === "none") {
+                    //     y.style.display = "block";
+                    // } else {
+                    //     y.style.display = "none";
+                    // }
 //                     var data = { name: 'yogesh', salary: 35000, email: 'yogesh@makitweb.com' };
 //                     console.log(data);
 //                     var toString = JSON.stringify(data);
@@ -74,10 +68,10 @@ console.log(sessionStorage);
 
 //                     xhttp.send(toString);
 // console.log(xhttp.responseText);
-// const sin=new signin();
-//                     document.getElementById("hide").addEventListener("click", sin.hide());
+const sin=new signin();
+                    document.getElementById("hide").addEventListener("click", sin.hide());
                     window.location.href="listing.html"
-                    return;
+                    return false;
                 }
             }
 
@@ -114,12 +108,11 @@ console.log(sessionStorage);
 </head>
 
 <body style="background-color: #070336;">
-    <div class="alert alert-danger alert-dismissible fade show" id="errorDiv">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <strong>Error!</strong> Email or Password is incorrect
-    </div>
-    <div class="alert alert-success alert-dismissible" id="successDiv">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+
+
+
+    <div class="alert alert-success alert-dismissible" id="errorDiv">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong> This alert box could indicate a successful or positive action.
     </div>
     <div class="container" style="background-color: #070336;">
@@ -134,7 +127,7 @@ console.log(sessionStorage);
                     <div class="row">
                         <h2 style="padding:10px; color: dodgerblue;">Login</h2>
                     </div>
-                    <form name="myForm" onsubmit="validate()" action="http://127.0.0.1:5500/src/Listing.html" method="post">
+                    <form name="myForm" onsubmit="return validate()" method="post">
 
                         <div class="input-container">
                             <i class="fa fa-envelope icon"></i>
